@@ -225,7 +225,9 @@ export default function FavoritesPage() {
                       <div>
                         <p className="text-gray-500 text-sm">Sunrise</p>
                         <p className="font-medium">
-                          {new Date(selectedCity.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        {typeof selectedCity.sys.sunrise === 'number' 
+                            ? new Date(selectedCity.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                            : selectedCity.sys.sunrise}
                         </p>
                       </div>
                     </div>
@@ -237,7 +239,9 @@ export default function FavoritesPage() {
                       <div>
                         <p className="text-gray-500 text-sm">Sunset</p>
                         <p className="font-medium">
-                          {new Date(selectedCity.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        {typeof selectedCity.sys.sunset === 'number' 
+                            ? new Date(selectedCity.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                            : selectedCity.sys.sunset}
                         </p>
                       </div>
                     </div>

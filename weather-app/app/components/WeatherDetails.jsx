@@ -6,12 +6,21 @@ export default function WeatherDetails({ data }) {
 
   const formatTime = (timestamp) => {
     if (!timestamp) return '--:--';
+    
+    
+    if (typeof timestamp === 'string') {
+      return timestamp;
+    }
+    
+    
     return new Date(timestamp * 1000).toLocaleTimeString([], { 
       hour: '2-digit', 
       minute: '2-digit',
       hour12: true
     });
   };
+  
+  
   
 
   const details = [
